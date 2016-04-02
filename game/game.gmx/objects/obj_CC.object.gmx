@@ -223,8 +223,7 @@ if(start_flag &gt;= 1 &amp;&amp; global.entry_flag == 1){
     
     //chatting function
     if(keyboard_check_pressed(vk_shift)){
-        chat_input();
-        //global.chat = get_string_async("chat","");
+        global.chat = get_string_async("chat","");
         global.ins_player.chara_data[? "chat_status"] = "chat_start";
         keyboard_key_release(vk_left);
         keyboard_key_release(vk_right);
@@ -234,7 +233,6 @@ if(start_flag &gt;= 1 &amp;&amp; global.entry_flag == 1){
     }
     if(keyboard_check_pressed(vk_enter)){
         if(global.ins_player.ins_mark.sprite_index == spr_mark_input){
-            chat_output();
             global.ins_player.chara_data[? "chat_status"] = "chat_end";
             keyboard_key = -1; 
         }
